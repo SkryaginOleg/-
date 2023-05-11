@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Довідник філателіста1", "Довідник філателіста1.csproj", "{D5C9989A-EF73-41F3-B77A-9CCCA58CCE28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5C9989A-EF73-41F3-B77A-9CCCA58CCE28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C9989A-EF73-41F3-B77A-9CCCA58CCE28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5C9989A-EF73-41F3-B77A-9CCCA58CCE28}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C9989A-EF73-41F3-B77A-9CCCA58CCE28}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABBBB953-ECFA-4AE8-A9E7-8531B3CC5F6A}
+	EndGlobalSection
+EndGlobal
