@@ -1,0 +1,16 @@
+E:\ХНУРЕ\OOP\Довідник філателіста\bin\Debug\Довідник філателіста.exe.config
+E:\ХНУРЕ\OOP\Довідник філателіста\bin\Debug\Довідник філателіста.exe
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник філателіста1.csproj.AssemblyReference.cache
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник філателіста1.csproj.SuggestedBindingRedirects.cache
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник_філателіста.MainForm.resources
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник_філателіста.Properties.Resources.resources
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник філателіста1.csproj.GenerateResource.cache
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник філателіста1.csproj.CoreCompileInputs.cache
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник філателіста.exe
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник філателіста.pdb
+E:\ХНУРЕ\OOP\Довідник філателіста\bin\Debug\Довідник філателіста.pdb
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник_філателіста.ListOfStamps.resources
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник_філателіста.AddingStamps.resources
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник_філателіста.AddingPhilatelists.resources
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник_філателіста.ListOfPhilatelists.resources
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник_філателіста.Philatelists_Info.resources
