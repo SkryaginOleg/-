@@ -10,7 +10,7 @@ namespace Довідник_філателіста
         public readonly int year;
         public readonly int circulation;
         public readonly double cost;
-        public readonly List<ushort> ListOf;
+        //public readonly List<ushort> ListOf;
 
         public Stamp(int id, string country, int year, int circulation, double cost, string features)
         {

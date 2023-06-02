@@ -46,6 +46,7 @@ namespace Довідник_філателіста
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -62,7 +63,6 @@ namespace Довідник_філателіста
             this.label8 = new System.Windows.Forms.Label();
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -223,6 +223,15 @@ namespace Довідник_філателіста
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(271, 102);
             this.panel2.TabIndex = 13;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(217, 49);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(46, 20);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Ok";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // label17
             // 
@@ -392,15 +401,6 @@ namespace Довідник_філателіста
             this.button2.Text = "Пошук";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(217, 49);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(46, 20);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Ok";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
