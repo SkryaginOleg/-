@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Emit;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -12,6 +13,14 @@ namespace Довідник_філателіста
             this.FormClosed += Form1_FormClosed;
         }
 
+        private void AddingPhilatelists_Load(object sender, EventArgs e)
+        {
+            label4.Text = string.Empty;
+            label5.Text = string.Empty;
+            label6.Text = string.Empty;
+            Text = "Додати філателіста";
+        }
+
         Thread th;
 
         private void button2_Click(object sender, EventArgs e)
@@ -23,45 +32,45 @@ namespace Довідник_філателіста
             string country = null;
             string contact_details = null;
 
-            if (Metod.Check_string(textBox2.Text))
+            if (Metod.Check_string(textBox3.Text))
             {
-                contact_details = textBox2.Text;
-                label4.Text = "";
-                textBox2.BackColor = System.Drawing.Color.White;
+                contact_details = textBox3.Text;
+                label6.Text = "";
+                textBox3.BackColor = System.Drawing.Color.White;
                 right1 = true;
             }
             else
             {
-                textBox2.BackColor = System.Drawing.Color.Salmon;
-                label4.Text = "Ви вели хибне значення.";
+                textBox3.BackColor = System.Drawing.Color.Salmon;
+                label6.Text = "Ви вели хибне значення.";
                 right1 = false;
             }
             //
             if (Metod.Check_string(textBox1.Text))
             {
                 name = textBox1.Text;
-                label5.Text = "";
+                label4.Text = "";
                 textBox1.BackColor = System.Drawing.Color.White;
                 right2 = true;
             }
             else
             {
                 textBox1.BackColor = System.Drawing.Color.Salmon;
-                label5.Text = "Ви вели хибне значення.";
+                label4.Text = "Ви вели хибне значення.";
                 right2 = false;
             }
             //
-            if (Metod.Check_string(textBox3.Text))
+            if (Metod.Check_string(textBox2.Text))
             {
-                country = textBox3.Text;
-                label6.Text = "";
-                textBox3.BackColor = System.Drawing.Color.White;
+                country = textBox2.Text;
+                label5.Text = "";
+                textBox2.BackColor = System.Drawing.Color.White;
                 right3 = true;
             }
             else
             {
-                textBox3.BackColor = System.Drawing.Color.Salmon;
-                label6.Text = "Ви вели хибне значення.";
+                textBox2.BackColor = System.Drawing.Color.Salmon;
+                label5.Text = "Ви вели хибне значення.";
                 right3 = false;
             }
             
@@ -92,5 +101,6 @@ namespace Довідник_філателіста
         {
             Application.Run(new ListOfPhilatelists());
         }
+
     }
 }

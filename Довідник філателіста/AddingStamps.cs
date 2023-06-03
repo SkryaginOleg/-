@@ -18,6 +18,7 @@ namespace Довідник_філателіста
 
         private void AddingStamps_Load(object sender, EventArgs e)
         {
+            Text = "Додати марку";
             label6.Text = string.Empty;
             label7.Text = string.Empty;
             label8.Text = string.Empty;
@@ -137,5 +138,6 @@ namespace Довідник_філателіста
         {
             Application.Run(new ListOfStamps());
         }
+
     }
 }

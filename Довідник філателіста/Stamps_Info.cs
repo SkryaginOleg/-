@@ -26,6 +26,7 @@ namespace Довідник_філателіста
 
         private void Stamps_Info_Load(object sender, EventArgs e)
         {
+            Text = "Інформація про марку";
             label1.Text = Convert.ToString(stamp.id);
             label2.Text = stamp.country;
             label3.Text = Convert.ToString(stamp.year);
@@ -59,8 +60,11 @@ namespace Довідник_філателіста
             table.Rows.Clear();
             foreach (int i in stamp.ListOfPhilatelists)
             {
-                Philatelist philatelist = ListPhilatelists.SearchID(i);
-                table.Rows.Add(philatelist.id, philatelist.name, philatelist.country, philatelist.contact_details);
+                if ( i != 0)
+                {
+                    Philatelist philatelist = ListPhilatelists.SearchID(i);
+                    table.Rows.Add(philatelist.id, philatelist.name, philatelist.country, philatelist.contact_details);
+                }
             }
         }
 
@@ -92,7 +96,14 @@ namespace Довідник_філателіста
                 ListStamps.Stamps.Remove(stamp);
                 foreach (int id in stamp.ListOfPhilatelists)
                 {
-                    ListPhilatelists.SearchID(id).ListOfStamps.Remove(stamp.id);
+                    if (stamp.ListOfPhilatelists.Contains(0))
+                    {
+                        ListPhilatelists.OwnCollection.Remove(stamp.id);
+                    }
+                    if(id != 0)
+                    {
+                        ListPhilatelists.SearchID(id).ListOfStamps.Remove(stamp.id);
+                    }
                 }
                 DialogResult result0 = MessageBox.Show("Інформація про колекціонера було видалено.", "Успіх", MessageBoxButtons.OK);
                 th = new Thread(openNewForm);

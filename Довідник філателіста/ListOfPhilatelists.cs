@@ -24,22 +24,9 @@ namespace Довідник_філателіста
         DataTable table = new DataTable();
 
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Thread th;
-            th = new Thread(openNewForm);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-            this.Close();
-        }
-
-        private void openNewForm()
-        {
-            Application.Run(new MainForm());
-        }
-
         private void ListOfPhilatelists_Load(object sender, EventArgs e)
         {
+            Text = "Список філателістов";
             dataGridView1.DataSource = null;
             table.Rows.Clear();
             table.Columns.Clear();
@@ -60,6 +47,21 @@ namespace Довідник_філателіста
             dataGridView1.Refresh();
 
             Print(ListPhilatelists.Philatelists);
+        }
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Thread th;
+            th = new Thread(openNewForm);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+            this.Close();
+        }
+
+        private void openNewForm()
+        {
+            Application.Run(new MainForm());
         }
 
         public void Print(List<Philatelist> list)

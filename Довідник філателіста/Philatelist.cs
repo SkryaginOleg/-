@@ -11,7 +11,7 @@ namespace Довідник_філателіста
         public readonly string name;
         public readonly string country;
         public readonly string contact_details;
-        public List<int> ListOfStamps = new List<int>();
+        public List<int> ListOfStamps = new List<int>();       
 
         public Philatelist(int id, string name, string country, string contact_details)
         {
@@ -37,7 +37,8 @@ namespace Довідник_філателіста
     public static class ListPhilatelists
     {
         public static List<Philatelist> Philatelists = new List<Philatelist>();
-        public static int MaxId;
+        public static List<int> OwnCollection = new List<int>();
+        public static int MaxId=1;
         public static int actual_id;
 
         public static void Add(Philatelist philatelist)
@@ -68,6 +69,7 @@ namespace Довідник_філателіста
             File.WriteAllText(filePath, string.Empty);
             using (StreamWriter writer = new StreamWriter(filePath, true))
             {
+                writer.WriteLine(string.Join("/|", OwnCollection));
                 foreach (Philatelist philatelist in Philatelists)
                 {
                     writer.WriteLine($"{philatelist.id}/[]{philatelist.name}/[]{philatelist.country}/[]{philatelist.contact_details}");

@@ -34,6 +34,7 @@ namespace Довідник_філателіста
 
         private void ListOfStamps_Load(object sender, EventArgs e)
         {
+            Text = "Список марок";
             dataGridView1.DataSource = null;
             table.Rows.Clear();
             table.Columns.Clear();
@@ -43,7 +44,7 @@ namespace Довідник_філателіста
             table.Columns.Add("Рік", typeof(string));
             table.Columns.Add("Тираж", typeof(int));
             table.Columns.Add("Вартість", typeof(double));
-            table.Columns.Add("Особливості", typeof(string));
+            table.Columns.Add("Назва", typeof(string));
 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ReadOnly = true;

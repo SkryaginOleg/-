@@ -43,9 +43,22 @@ namespace Довідник_філателіста
         }
 
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            th = new Thread(openNewForm4);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+            this.Close();
+        }
+        private void openNewForm4()
+        {
+            Application.Run(new OwnCollection());
+        }
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            Text = "Меню";
             if (ListStamps.FirstLaunch)
             {
                 string[] s = File.ReadAllLines("ListOfStamp.txt");
@@ -61,14 +74,17 @@ namespace Довідник_філателіста
                 }
 
                 string[] t = File.ReadAllLines("ListOfPhilatelists.txt");
-                for (int i = 0; i < t.Length; i++)
+                int[] rpas0 = Array.ConvertAll(t[0].Split(new string[] { "/|" }, StringSplitOptions.None), int.Parse);
+                ListPhilatelists.OwnCollection = new List<int>(rpas0);
+
+                for (int i = 1; i < t.Length; i++)
                 {
-                    string[] rpas = t[i].Split(new string[] { "/[]" }, StringSplitOptions.None);
-                    ListPhilatelists.Add(new Philatelist(Convert.ToInt32(rpas[0]), rpas[1], (rpas[2]), (rpas[3])));
+                    string[] rpas1 = t[i].Split(new string[] { "/[]" }, StringSplitOptions.None);
+                    ListPhilatelists.Add(new Philatelist(Convert.ToInt32(rpas1[0]), rpas1[1], (rpas1[2]), (rpas1[3])));
                     if (++i < t.Length && t[i] != "")
                     {                       
-                        int[] rpas1 = Array.ConvertAll(t[i].Split(new string[] { "/|" }, StringSplitOptions.None), int.Parse);
-                        ListPhilatelists.Philatelists[ListPhilatelists.Philatelists.Count-1].ListOfStamps = new List<int>(rpas1);
+                        int[] rpas2 = Array.ConvertAll(t[i].Split(new string[] { "/|" }, StringSplitOptions.None), int.Parse);
+                        ListPhilatelists.Philatelists[ListPhilatelists.Philatelists.Count-1].ListOfStamps = new List<int>(rpas2);
                     }
                 }
                 ListStamps.FirstLaunch = false;

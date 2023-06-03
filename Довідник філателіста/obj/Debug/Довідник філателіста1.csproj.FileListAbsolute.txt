@@ -15,3 +15,4 @@ E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідн
 E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник_філателіста.ListOfPhilatelists.resources
 E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник_філателіста.Philatelists_Info.resources
 E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник_філателіста.Stamps_Info.resources
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Debug\Довідник_філателіста.OwnCollection.resources
