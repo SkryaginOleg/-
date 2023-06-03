@@ -26,6 +26,14 @@ namespace Довідник_філателіста
 
         public void Print(List<Stamp> list)
         {
+            foreach (Stamp stamp in list)
+            {
+                table.Rows.Add(stamp.id, stamp.country, stamp.year, stamp.circulation, stamp.cost, stamp.features);
+            }           
+        }
+
+        private void ListOfStamps_Load(object sender, EventArgs e)
+        {
             dataGridView1.DataSource = null;
             table.Rows.Clear();
             table.Columns.Clear();
@@ -37,10 +45,6 @@ namespace Довідник_філателіста
             table.Columns.Add("Вартість", typeof(double));
             table.Columns.Add("Особливості", typeof(string));
 
-            foreach (Stamp stamp in list)
-            {
-                table.Rows.Add(stamp.id, stamp.country, stamp.year, stamp.circulation, stamp.cost, stamp.features);
-            }
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ReadOnly = true;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -50,10 +54,7 @@ namespace Довідник_філателіста
 
             dataGridView1.DataSource = table;
             dataGridView1.Refresh();
-        }
 
-        private void ListOfStamps_Load(object sender, EventArgs e)
-        {
             Print(ListStamps.Stamps);
             label3.Text = Convert.ToString(ListStamps.MaxCost);
             label4.Text = Convert.ToString(ListStamps.MinCost);

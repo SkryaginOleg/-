@@ -77,17 +77,19 @@ namespace Довідник_філателіста
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dataGridView1.Size = new System.Drawing.Size(436, 393);
+            this.dataGridView1.Size = new System.Drawing.Size(476, 393);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(667, 405);
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.Location = new System.Drawing.Point(697, 405);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 33);
             this.button1.TabIndex = 1;
@@ -97,8 +99,9 @@ namespace Довідник_філателіста
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox1.Location = new System.Drawing.Point(486, 28);
+            this.textBox1.Location = new System.Drawing.Point(516, 28);
             this.textBox1.Name = "textBox1";
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox1.Size = new System.Drawing.Size(271, 20);
@@ -107,8 +110,9 @@ namespace Довідник_філателіста
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(486, 12);
+            this.label1.Location = new System.Drawing.Point(516, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 4;
@@ -165,6 +169,7 @@ namespace Довідник_філателіста
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label2);
@@ -174,7 +179,7 @@ namespace Довідник_філателіста
             this.panel1.Controls.Add(this.trackBar2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.trackBar1);
-            this.panel1.Location = new System.Drawing.Point(486, 54);
+            this.panel1.Location = new System.Drawing.Point(516, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(271, 102);
             this.panel1.TabIndex = 10;
@@ -213,6 +218,7 @@ namespace Довідник_філателіста
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.label17);
@@ -221,7 +227,7 @@ namespace Довідник_філателіста
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label15);
-            this.panel2.Location = new System.Drawing.Point(486, 270);
+            this.panel2.Location = new System.Drawing.Point(516, 270);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(271, 102);
             this.panel2.TabIndex = 13;
@@ -300,6 +306,7 @@ namespace Довідник_філателіста
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label7);
@@ -309,7 +316,7 @@ namespace Довідник_філателіста
             this.panel3.Controls.Add(this.trackBar4);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.trackBar3);
-            this.panel3.Location = new System.Drawing.Point(486, 162);
+            this.panel3.Location = new System.Drawing.Point(516, 162);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(271, 102);
             this.panel3.TabIndex = 13;
@@ -396,7 +403,8 @@ namespace Довідник_філателіста
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(486, 405);
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.Location = new System.Drawing.Point(516, 405);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 33);
             this.button2.TabIndex = 14;
@@ -406,10 +414,11 @@ namespace Довідник_філателіста
             // 
             // label18
             // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label18.ForeColor = System.Drawing.Color.IndianRed;
-            this.label18.Location = new System.Drawing.Point(582, 410);
+            this.label18.Location = new System.Drawing.Point(612, 410);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(60, 20);
             this.label18.TabIndex = 15;
@@ -417,9 +426,10 @@ namespace Довідник_філателіста
             // 
             // button4
             // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button4.Location = new System.Drawing.Point(12, 405);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(436, 33);
+            this.button4.Size = new System.Drawing.Size(476, 33);
             this.button4.TabIndex = 16;
             this.button4.Text = "Додати марку";
             this.button4.UseVisualStyleBackColor = true;

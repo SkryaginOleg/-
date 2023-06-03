@@ -88,10 +88,10 @@ namespace Довідник_філателіста
             {
                 foreach (Stamp stamp in Stamps)
                 {
-                    writer.WriteLine($"{stamp.id}.{stamp.country}.{stamp.year}.{stamp.circulation}.{stamp.cost}.{stamp.features}");
+                    writer.WriteLine($"{stamp.id}/[]{stamp.country}/[]{stamp.year}/[]{stamp.circulation}/[]{stamp.cost}/[]{stamp.features}");
                     if (stamp.ListOfPhilatelists != null && stamp.ListOfPhilatelists.Count > 0)
                     {
-                        writer.WriteLine(string.Join(".", stamp.ListOfPhilatelists));
+                        writer.WriteLine(string.Join("/|", stamp.ListOfPhilatelists));
                     }
                     else
                     {

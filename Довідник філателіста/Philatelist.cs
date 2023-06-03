@@ -70,10 +70,10 @@ namespace Довідник_філателіста
             {
                 foreach (Philatelist philatelist in Philatelists)
                 {
-                    writer.WriteLine($"{philatelist.id}.{philatelist.name}.{philatelist.country}.{philatelist.contact_details}");
+                    writer.WriteLine($"{philatelist.id}/[]{philatelist.name}/[]{philatelist.country}/[]{philatelist.contact_details}");
                     if (philatelist.ListOfStamps != null && philatelist.ListOfStamps.Count > 0)
                     {
-                        writer.WriteLine(string.Join(".", philatelist.ListOfStamps));
+                        writer.WriteLine(string.Join("/|", philatelist.ListOfStamps));
                     }
                     else
                     {
