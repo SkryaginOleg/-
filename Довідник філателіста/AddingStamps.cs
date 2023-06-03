@@ -10,20 +10,19 @@ namespace Довідник_філателіста
         public AddingStamps()
         {
             InitializeComponent();
-            this.FormClosed += Form1_FormClosed;
+            FormClosed += Form1_FormClosed;
         }
+
+
         Thread th;
 
-        private void button2_Click(object sender, EventArgs e)
+        private void AddingStamps_Load(object sender, EventArgs e)
         {
-            th = new Thread(openNewForm);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-            this.Close();
-        }
-        private void openNewForm()
-        {
-            Application.Run(new MainForm());
+            label6.Text = string.Empty;
+            label7.Text = string.Empty;
+            label8.Text = string.Empty;
+            label9.Text = string.Empty;
+            label10.Text = string.Empty;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -124,15 +123,19 @@ namespace Довідник_філателіста
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            string filePath = "ListOfStamp.txt";
-            File.WriteAllText(filePath, string.Empty);
-            using (StreamWriter writer = new StreamWriter(filePath, true))
-            {
-                foreach (Stamp stamp in ListStamps.Stamps)
-                {
-                    writer.WriteLine($"{stamp.id} {stamp.country} {stamp.year} {stamp.circulation} {stamp.cost} {stamp.features}");
-                }
-            }
+            ListStamps.SaveInFile();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            th = new Thread(openNewForm);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+            this.Close();
+        }
+        private void openNewForm()
+        {
+            Application.Run(new ListOfStamps());
         }
     }
 }

@@ -10,36 +10,12 @@ namespace Довідник_філателіста
 {
     public partial class MainForm : Form
     {
-        Thread th;
         public MainForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            th = new Thread(openNewForm);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-            this.Close();
-        }
-        private void openNewForm()
-        {
-            Application.Run(new AddingStamps());
-        }
-
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            th = new Thread(openNewForm1);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-            this.Close();
-        }
-        private void openNewForm1()
-        {
-            Application.Run(new AddingPhilatelists());
-        }
+        Thread th;
 
 
         private void button3_Click(object sender, EventArgs e)
@@ -54,8 +30,7 @@ namespace Довідник_філателіста
             Application.Run(new ListOfStamps());
         }
 
-
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click_1(object sender, EventArgs e)
         {
             th = new Thread(openNewForm3);
             th.SetApartmentState(ApartmentState.STA);
@@ -68,6 +43,7 @@ namespace Довідник_філателіста
         }
 
 
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             if (ListStamps.FirstLaunch)
@@ -75,11 +51,14 @@ namespace Довідник_філателіста
                 string[] s = File.ReadAllLines("ListOfStamp.txt");
                 for (int i = 0; i < s.Length; i++)
                 {
-                    string[] rpas = s[i].Split(new char[] { ' ' });
+                    string[] rpas = s[i].Split(new char[] { '.' });
                     ListStamps.Add(new Stamp(Convert.ToInt32(rpas[0]), rpas[1], Convert.ToInt32(rpas[2]), Convert.ToInt32(rpas[3]), Convert.ToDouble(rpas[4]), rpas[5]));
+                    if (++i < s.Length && s[i] != "")
+                    {
+                        int[] rpas1 = Array.ConvertAll(s[i].Split(new char[] { '.' }), int.Parse);
+                        ListStamps.Stamps[ListStamps.Stamps.Count - 1].ListOfPhilatelists = new List<int>(rpas1);
+                    }
                 }
-                ListStamps.FirstLaunch = false;
-
 
                 string[] t = File.ReadAllLines("ListOfPhilatelists.txt");
                 for (int i = 0; i < t.Length; i++)

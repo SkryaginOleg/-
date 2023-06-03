@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
-using Timer = System.Windows.Forms.Timer;
 
 namespace Довідник_філателіста
 {
@@ -20,6 +11,7 @@ namespace Довідник_філателіста
         public Philatelists_Info()
         {
             InitializeComponent();
+            FormClosed += Form1_FormClosed;
         }
         Thread th;
         DataTable table = new DataTable();
@@ -62,6 +54,7 @@ namespace Довідник_філателіста
 
         public void Print(Philatelist philatelist)
         {
+            table.Rows.Clear();
             foreach (int i in philatelist.ListOfStamps)
             {
                 Stamp stamp = ListStamps.SearchID(i);
@@ -78,12 +71,11 @@ namespace Довідник_філателіста
         }
         private void openNewForm()
         {
-            System.Windows.Forms.Application.Run(new ListOfPhilatelists());
+            Application.Run(new ListOfPhilatelists());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            bool found = false;
             if (!Metod.Check_int(textBox1.Text))
             {
                 DialogResult result = MessageBox.Show("Ви ввеле хибне значення. Спробуйте ще раз.", "Помилка.", MessageBoxButtons.OK);
@@ -96,14 +88,8 @@ namespace Довідник_філателіста
             else
             {
                 int id = Convert.ToInt32(textBox1.Text);
-                foreach (int element in philatelist.ListOfStamps)
-                {
-                    if (element == id)
-                    {
-                        found = true; break;
-                    }
-                }
-                if (found)
+         
+                if (philatelist.SearchStamp(id))
                 {
                     DialogResult result = MessageBox.Show($"Марка з індексом {id} вже добавлена до колекції.", "Помилка.", MessageBoxButtons.OK);
                     if (result == DialogResult.OK)
@@ -114,11 +100,8 @@ namespace Довідник_філателіста
                 else if (ListStamps.SearchID(id) != null)
                 {
                     philatelist.ListOfStamps.Add(id);
-                    DialogResult result = MessageBox.Show($"Марка з індексом {id} добавлена до колекції.", "Успіх.", MessageBoxButtons.OK); ;
-                    if (result == DialogResult.OK)
-                    {
-                        textBox1.Text = "";
-                    }
+                    ListStamps.SearchID(id).ListOfPhilatelists.Add(philatelist.id);
+                    textBox1.Text = "";
                     Print(philatelist);
                 }
                 else
@@ -138,9 +121,13 @@ namespace Довідник_філателіста
             if (result == DialogResult.OK)
             {
                 ListPhilatelists.Philatelists.Remove(philatelist);
+                foreach (int id in philatelist.ListOfStamps)
+                {
+                    ListStamps.SearchID(id).ListOfPhilatelists.Remove(philatelist.id);
+                }
+                DialogResult result0 = MessageBox.Show("Інформація про колекціонера було видалено.", "Успіх", MessageBoxButtons.OK);
                 th = new Thread(openNewForm);
                 th.SetApartmentState(ApartmentState.STA);
-                DialogResult result0 = MessageBox.Show("Інформація про колекціонера було видалено.", "Успіх", MessageBoxButtons.OK);
                 this.Close();
                 th.Start();
             }
@@ -167,6 +154,38 @@ namespace Довідник_філателіста
             table.Rows.Clear();
             Print(philatelist);
             label10.Visible = false;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (textBox2.Text != null)
+            {
+                if (!Metod.Check_int(textBox2.Text))
+                {
+                    DialogResult result0 = MessageBox.Show("Ви ввеле хибне значення. Спробуйте ще раз.", "Помилка", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    int id = Convert.ToInt32(textBox2.Text);
+                    if (philatelist.SearchStamp(id))
+                    {
+                        philatelist.ListOfStamps.Remove(id);
+                        ListStamps.SearchID(id).ListOfPhilatelists.Remove(philatelist.id);
+                        DialogResult result0 = MessageBox.Show($"Марка з id:{id} була видалена.", "Успіх", MessageBoxButtons.OK);
+                        Print(philatelist);
+                    }
+                    else
+                    {
+                        DialogResult result0 = MessageBox.Show($"Марки з id:{id} не існує в даній колекції.", "Помилка", MessageBoxButtons.OK);
+                    }
+                }
+            }
+            textBox2.Text = "";
+        }
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ListPhilatelists.SaveInFile();
+            ListStamps.SaveInFile();
         }
     }
 

@@ -1,16 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 
 namespace Довідник_філателіста
 {
     public class Stamp
     {
         public int id;
-        public readonly string features;
         public readonly string country;
         public readonly int year;
         public readonly int circulation;
         public readonly double cost;
-        //public readonly List<ushort> ListOf;
+        public readonly string features;
+        public List<int> ListOfPhilatelists = new List<int>();
 
         public Stamp(int id, string country, int year, int circulation, double cost, string features)
         {
@@ -26,6 +27,7 @@ namespace Довідник_філателіста
     public static class ListStamps
     {
         public static bool FirstLaunch = true;
+        public static int actual_id;
         public static List<Stamp> Stamps = new List<Stamp>();
         public static int Length;
         public static double MaxCost;
@@ -77,5 +79,27 @@ namespace Довідник_філателіста
             }
             return null;
         }
+
+        public static void SaveInFile()
+        {
+            string filePath = "ListOfStamp.txt";
+            File.WriteAllText(filePath, string.Empty);
+            using (StreamWriter writer = new StreamWriter(filePath, true))
+            {
+                foreach (Stamp stamp in Stamps)
+                {
+                    writer.WriteLine($"{stamp.id}.{stamp.country}.{stamp.year}.{stamp.circulation}.{stamp.cost}.{stamp.features}");
+                    if (stamp.ListOfPhilatelists != null && stamp.ListOfPhilatelists.Count > 0)
+                    {
+                        writer.WriteLine(string.Join(".", stamp.ListOfPhilatelists));
+                    }
+                    else
+                    {
+                        writer.WriteLine();
+                    }
+                }
+            }
+        }
+
     }
 }

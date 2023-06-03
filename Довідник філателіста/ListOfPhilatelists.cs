@@ -19,6 +19,7 @@ namespace Довідник_філателіста
             InitializeComponent();
         }
 
+        Thread th;
         DataTable table = new DataTable();
 
 
@@ -36,7 +37,7 @@ namespace Довідник_філателіста
             Application.Run(new MainForm());
         }
 
-        public void Print(List<Philatelist> list)
+        private void ListOfPhilatelists_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
             table.Rows.Clear();
@@ -47,11 +48,6 @@ namespace Довідник_філателіста
             table.Columns.Add("Країна", typeof(string));
             table.Columns.Add("Контактні_дані", typeof(string));
 
-            foreach (Philatelist philatelist in list)
-            {
-                table.Rows.Add(philatelist.id, philatelist.name, philatelist.country, philatelist.contact_details);
-            }
-
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ReadOnly = true;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -61,11 +57,16 @@ namespace Довідник_філателіста
 
             dataGridView1.DataSource = table;
             dataGridView1.Refresh();
+
+            Print(ListPhilatelists.Philatelists);
         }
 
-        private void ListOfPhilatelists_Load(object sender, EventArgs e)
+        public void Print(List<Philatelist> list)
         {
-            Print(ListPhilatelists.Philatelists);
+            foreach (Philatelist philatelist in list)
+            {
+                table.Rows.Add(philatelist.id, philatelist.name, philatelist.country, philatelist.contact_details);
+            }
         }
 
         private void dataGridView1_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
@@ -75,7 +76,6 @@ namespace Довідник_філателіста
                 // Получаем выбранный элемент
                 var selectedRow = dataGridView1.Rows[e.RowIndex];
                 ListPhilatelists.actual_id = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
-                Thread th;
                 th = new Thread(openNewForm1);
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
@@ -85,6 +85,18 @@ namespace Довідник_філателіста
         private void openNewForm1()
         {
             Application.Run(new Philatelists_Info());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            th = new Thread(openNewForm2);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+            this.Close();
+        }
+        private void openNewForm2()
+        {
+            Application.Run(new AddingPhilatelists());
         }
     }
 }

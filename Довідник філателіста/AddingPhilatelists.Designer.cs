@@ -118,9 +118,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(622, 336);
+            this.button1.Location = new System.Drawing.Point(667, 405);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 57);
+            this.button1.Size = new System.Drawing.Size(90, 33);
             this.button1.TabIndex = 0;
             this.button1.Text = "Відміна";
             this.button1.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(622, 256);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 57);
+            this.button2.Size = new System.Drawing.Size(90, 33);
             this.button2.TabIndex = 10;
             this.button2.Text = "Створити";
             this.button2.UseVisualStyleBackColor = true;

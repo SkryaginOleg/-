@@ -21,21 +21,8 @@ namespace Довідник_філателіста
         {
             InitializeComponent();
         }
-
+        Thread th;
         DataTable table = new DataTable();
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Thread th;
-            th = new Thread(openNewForm);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-            this.Close();
-        }
-        private void openNewForm()
-        {
-            Application.Run(new MainForm());
-        }
 
         public void Print(List<Stamp> list)
         {
@@ -276,6 +263,48 @@ namespace Довідник_філателіста
                     table.Rows.Add(stamp.id, stamp.country, stamp.year, stamp.circulation, stamp.cost, stamp.features);
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            th = new Thread(openNewForm);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+            this.Close();
+        }
+        private void openNewForm()
+        {
+            Application.Run(new MainForm());
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Проверяем, что ячейка не заголовок
+            {
+                // Получаем выбранный элемент
+                var selectedRow = dataGridView1.Rows[e.RowIndex];
+                ListStamps.actual_id = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+                th = new Thread(openNewForm2);
+                th.SetApartmentState(ApartmentState.STA);
+                th.Start();
+                this.Close();
+            }
+        }
+        private void openNewForm2()
+        {
+            Application.Run(new Stamps_Info());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            th = new Thread(openNewForm1);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+            this.Close();
+        }
+        private void openNewForm1()
+        {
+            Application.Run(new AddingStamps());
         }
     }
 }

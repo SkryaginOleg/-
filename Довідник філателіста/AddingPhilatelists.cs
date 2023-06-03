@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Довідник_філателіста
 {
@@ -22,20 +11,8 @@ namespace Довідник_філателіста
             InitializeComponent();
             this.FormClosed += Form1_FormClosed;
         }
+
         Thread th;
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            th = new Thread(openNewForm);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-            this.Close();
-        }
-        private void openNewForm()
-        {
-            Application.Run(new MainForm());
-        }
-
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -100,23 +77,20 @@ namespace Довідник_філателіста
         }
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            string filePath = "ListOfPhilatelists.txt";
-            File.WriteAllText(filePath, string.Empty);
-            using (StreamWriter writer = new StreamWriter(filePath, true))
-            {
-                foreach (Philatelist philatelist in ListPhilatelists.Philatelists)
-                {
-                    writer.WriteLine($"{philatelist.id}.{philatelist.name}.{philatelist.country}.{philatelist.contact_details}");
-                    if (philatelist.ListOfStamps != null && philatelist.ListOfStamps.Count > 0)
-                    {
-                        writer.WriteLine(string.Join(".", philatelist.ListOfStamps));
-                    }
-                    else
-                    {
-                        writer.WriteLine();
-                    }
-                }
-            }
+            ListPhilatelists.SaveInFile();            
+        }
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            th = new Thread(openNewForm);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+            this.Close();
+        }
+        private void openNewForm()
+        {
+            Application.Run(new ListOfPhilatelists());
         }
     }
 }

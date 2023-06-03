@@ -59,6 +59,12 @@
     <Compile Include="AddingPhilatelists.Designer.cs">
       <DependentUpon>AddingPhilatelists.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stamps_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stamps_Info.Designer.cs">
+      <DependentUpon>Stamps_Info.cs</DependentUpon>
+    </Compile>
     <Compile Include="Philatelists_Info.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Stamps_Info.resx">
+      <DependentUpon>Stamps_Info.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

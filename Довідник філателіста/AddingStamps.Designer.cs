@@ -131,7 +131,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(496, 164);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 86);
+            this.button1.Size = new System.Drawing.Size(90, 33);
             this.button1.TabIndex = 12;
             this.button1.Text = "Створити";
             this.button1.UseVisualStyleBackColor = false;
@@ -184,9 +184,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(608, 318);
+            this.button2.Location = new System.Drawing.Point(667, 405);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(90, 33);
             this.button2.TabIndex = 0;
             this.button2.Text = "Відміна";
             this.button2.UseVisualStyleBackColor = true;
@@ -218,6 +218,7 @@
             this.Name = "AddingStamps";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.AddingStamps_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
