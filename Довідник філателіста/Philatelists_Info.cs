@@ -13,7 +13,6 @@ namespace Довідник_філателіста
             InitializeComponent();
             FormClosed += Form1_FormClosed;
         }
-        Thread th;
         DataTable table = new DataTable();
         Philatelist philatelist = ListPhilatelists.SearchID(ListPhilatelists.actual_id);
 
@@ -65,14 +64,16 @@ namespace Довідник_філателіста
 
         private void button1_Click(object sender, EventArgs e)
         {
-            th = new Thread(openNewForm);
-            th.SetApartmentState(ApartmentState.STA);
             this.Close();
-            th.Start();
         }
         private void openNewForm()
         {
             Application.Run(new ListOfPhilatelists());
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            OnFormClosing(new FormClosingEventArgs(CloseReason.UserClosing, false));
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -127,10 +128,7 @@ namespace Довідник_філателіста
                     ListStamps.SearchID(id).ListOfPhilatelists.Remove(philatelist.id);
                 }
                 DialogResult result0 = MessageBox.Show("Інформація про колекціонера було видалено.", "Успіх", MessageBoxButtons.OK);
-                th = new Thread(openNewForm);
-                th.SetApartmentState(ApartmentState.STA);
                 this.Close();
-                th.Start();
             }
             else if (result == DialogResult.Cancel) { }
         }

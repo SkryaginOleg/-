@@ -150,5 +150,8 @@
   <ItemGroup>
     <Folder Include="Document\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Марка.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,7 +19,6 @@ namespace Довідник_філателіста
             FormClosed += Form1_FormClosed;
         }
 
-        Thread th;
         DataTable table = new DataTable();
         Stamp stamp = ListStamps.SearchID(ListStamps.actual_id);
 
@@ -71,14 +70,12 @@ namespace Довідник_філателіста
 
         private void button1_Click(object sender, EventArgs e)
         {
-            th = new Thread(openNewForm);
-            th.SetApartmentState(ApartmentState.STA);
             this.Close();
-            th.Start();
         }
-        private void openNewForm()
+
+        private void buttonClose_Click(object sender, EventArgs e)
         {
-            Application.Run(new ListOfStamps());
+            OnFormClosing(new FormClosingEventArgs(CloseReason.UserClosing, false));
         }
 
 
@@ -90,7 +87,7 @@ namespace Довідник_філателіста
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Ви впевнені, що хочете видалити всю інформацію про даного колекціонера?", "Підтвердження", MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show("Ви впевнені, що хочете видалити всю інформацію про дану марку?", "Підтвердження", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
                 ListStamps.Stamps.Remove(stamp);
@@ -105,11 +102,11 @@ namespace Довідник_філателіста
                         ListPhilatelists.SearchID(id).ListOfStamps.Remove(stamp.id);
                     }
                 }
-                DialogResult result0 = MessageBox.Show("Інформація про колекціонера було видалено.", "Успіх", MessageBoxButtons.OK);
-                th = new Thread(openNewForm);
-                th.SetApartmentState(ApartmentState.STA);
+                DialogResult result0 = MessageBox.Show("Інформація про марку було видалено.", "Успіх", MessageBoxButtons.OK);
+                //th = new Thread(openNewForm);
+                //th.SetApartmentState(ApartmentState.STA);
                 this.Close();
-                th.Start();
+                //th.Start();
             }
             else if (result == DialogResult.Cancel) { }
         }

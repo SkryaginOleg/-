@@ -30,6 +30,7 @@ namespace Довідник_філателіста
         public static int actual_id;
         public static List<Stamp> Stamps = new List<Stamp>();
         public static int Length;
+        public static int MaxId;
         public static double MaxCost;
         public static double MinCost = int.MaxValue;
         public static int MaxYear;
@@ -39,7 +40,6 @@ namespace Довідник_філателіста
 
         public static void Add(Stamp stamp)
         {
-            Stamps.Add(stamp);
             if (stamp.cost > MaxCost)
             {
                 MaxCost = stamp.cost;
@@ -66,6 +66,11 @@ namespace Довідник_філателіста
             {
                 MinCirculation = stamp.circulation;
             }
+            if (stamp.id > MaxId)
+            {
+                MaxId = stamp.id;
+            }
+            Stamps.Add(stamp);
             Length++;
         }
         public static Stamp SearchID(int id)

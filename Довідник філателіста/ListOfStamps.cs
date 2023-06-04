@@ -100,6 +100,17 @@ namespace Довідник_філателіста
             return MinCirculation && MaxCirculation && Metod.Check_int(textBox2.Text) && Metod.Check_int(textBox3.Text);
         }
 
+        private void update()
+        {
+            table.Rows.Clear();
+            foreach (Stamp stamp in ListStamps.Stamps)
+            {
+                if (List(stamp))
+                {
+                    table.Rows.Add(stamp.id, stamp.country, stamp.year, stamp.circulation, stamp.cost, stamp.features);
+                }
+            }
+        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -257,14 +268,7 @@ namespace Довідник_філателіста
 
         private void button2_Click(object sender, EventArgs e)
         {
-            table.Rows.Clear();
-            foreach (Stamp stamp in ListStamps.Stamps)
-            {
-                if (List(stamp))
-                {
-                    table.Rows.Add(stamp.id, stamp.country, stamp.year, stamp.circulation, stamp.cost, stamp.features);
-                }
-            }
+            update();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -286,16 +290,24 @@ namespace Довідник_філателіста
                 // Получаем выбранный элемент
                 var selectedRow = dataGridView1.Rows[e.RowIndex];
                 ListStamps.actual_id = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
-                th = new Thread(openNewForm2);
-                th.SetApartmentState(ApartmentState.STA);
-                th.Start();
-                this.Close();
+                OpenDialogForm();
             }
         }
-        private void openNewForm2()
+        private void OpenDialogForm()
         {
-            Application.Run(new Stamps_Info());
+            using (Stamps_Info dialogForm = new Stamps_Info())
+            {
+                dialogForm.FormClosing += DialogForm_FormClosing;
+
+                dialogForm.ShowDialog(this);
+            }
         }
+
+        private void DialogForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            update();
+        }
+
 
         private void button4_Click(object sender, EventArgs e)
         {

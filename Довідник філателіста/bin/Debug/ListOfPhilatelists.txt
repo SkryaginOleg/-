@@ -1,21 +1,17 @@
-6/|7/|1/|3/|11/|12/|13/|14/|16/|17/|23/|34/|56/|45/|67
+6/|1/|3/|11/|12/|13/|14/|16/|17/|23/|34/|56/|45/|67
 1/[]Іван Петров/[]Україна/[]ivan@example.com
-1/|2/|3/|5/|6/|7/|10
+1/|2/|3/|6/|10
 2/[]Emily Johnson/[]США/[]emily@example.com
 1
 3/[]Andreas Müller/[]Німеччина/[]andreas@example.com
-1
-4/[]Juan Rodriguez/[]Іспанія/[]juan@example.com
 1
 5/[]Марія Гомес/[]Колумбія/[]maria@example.com
 1
 7/[]David Smith/[]Велика Британія/[]david@example.com
 1
 8/[]Giovanni Rossi/[]Італія/[]giovanni@example.com
-1/|7
-9/[]Sophie Leblanc/[]Франція/[]sophie@example.com
 1
-10/[]林小明 (Lin Xiaoming)/[]Китай/[]lin@example.com
+9/[]Sophie Leblanc/[]Франція/[]sophie@example.com
 1
 11/[]Jan Kowalski/[]Польща/[]jan@example.com
 
@@ -110,7 +106,7 @@
 56/[]Miguel Lopez/[]Іспанія/[]miguel@example.com
 
 57/[]Андрій Коваленко/[]Україна/[]andriy.kovalenko@example.com
-
+1
 58/[]Alex Turner/[]Канада/[]alex.turner@example.com
 
 59/[]Hans Meier/[]Швейцарія/[]hans.meier@example.com
@@ -118,8 +114,6 @@
 60/[]Carlos Fernández/[]Аргентина/[]carlos@example.com
 
 61/[]Pedro Sousa/[]Португалія/[]pedro@example.com
-
-62/[]Vitali Ivanov/[]Росія/[]vitali@example.com
 
 63/[]Emma Smith/[]США/[]emma.smith@example.com
 
@@ -192,6 +186,4 @@
 97/[]Robert Wilson/[]Велика Британія/[]robert.wilson@example.com
 
 98/[]Fabio Costa/[]Бразилія/[]fabio.costa@example.com
-
-99/[]Lucia Silva/[]Португалія/[]lucia.silva@example.com
 

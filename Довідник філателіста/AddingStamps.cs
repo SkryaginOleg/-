@@ -112,7 +112,7 @@ namespace Довідник_філателіста
 
             if (right1 && right2 && right3 && right4 && right5)
             {
-                ListStamps.Add(new Stamp(ListStamps.Length, country, year, circulation, cost, features));
+                ListStamps.Add(new Stamp(ListStamps.MaxId + 1, country, year, circulation, cost, features));
                 button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
                 textBox1.Text = null;
                 textBox2.Text = null; 

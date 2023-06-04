@@ -89,7 +89,7 @@ namespace Довідник_філателіста
             return name(philatelist) && country(philatelist) && contact_details(philatelist);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void update()
         {
             table.Rows.Clear();
             foreach (Philatelist philatelist in ListPhilatelists.Philatelists)
@@ -99,32 +99,23 @@ namespace Довідник_філателіста
                     table.Rows.Add(philatelist.id, philatelist.name, philatelist.country, philatelist.contact_details);
                 }
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            update();
         }
 
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            table.Rows.Clear();
-            foreach (Philatelist philatelist in ListPhilatelists.Philatelists)
-            {
-                if (List(philatelist))
-                {
-                    table.Rows.Add(philatelist.id, philatelist.name, philatelist.country, philatelist.contact_details);
-                }
-            }
+            update();
         }
 
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            table.Rows.Clear();
-            foreach (Philatelist philatelist in ListPhilatelists.Philatelists)
-            {
-                if (List(philatelist))
-                {
-                    table.Rows.Add(philatelist.id, philatelist.name, philatelist.country, philatelist.contact_details);
-                }
-            }
+            update();
         }
 
         private void dataGridView1_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
@@ -134,16 +125,24 @@ namespace Довідник_філателіста
                 // Получаем выбранный элемент
                 var selectedRow = dataGridView1.Rows[e.RowIndex];
                 ListPhilatelists.actual_id = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
-                th = new Thread(openNewForm1);
-                th.SetApartmentState(ApartmentState.STA);
-                th.Start();
-                this.Close();
+                OpenDialogForm();
             }
         }
-        private void openNewForm1()
+        private void OpenDialogForm()
         {
-            Application.Run(new Philatelists_Info());
+            using (Philatelists_Info dialogForm = new Philatelists_Info())
+            {
+                dialogForm.FormClosing += DialogForm_FormClosing;
+
+                dialogForm.ShowDialog(this);
+            }
         }
+
+        private void DialogForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            update();
+        }
+
 
         private void button4_Click(object sender, EventArgs e)
         {
