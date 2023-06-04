@@ -37,7 +37,8 @@
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button3.BackColor = System.Drawing.Color.Teal;
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button3.Location = new System.Drawing.Point(149, 105);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 43);
@@ -49,7 +50,8 @@
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button4.BackColor = System.Drawing.Color.Teal;
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button4.Location = new System.Drawing.Point(149, 190);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(122, 43);
@@ -61,7 +63,8 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(149, 279);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 43);
@@ -82,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(839, 481);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.button1);

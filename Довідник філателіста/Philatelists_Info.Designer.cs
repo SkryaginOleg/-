@@ -156,16 +156,18 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.Location = new System.Drawing.Point(697, 405);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 33);
             this.button1.TabIndex = 9;
             this.button1.Text = "Назад";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.DarkCyan;
             this.textBox1.Location = new System.Drawing.Point(24, 51);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(84, 20);
@@ -185,23 +187,25 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Teal;
             this.button2.Location = new System.Drawing.Point(190, 51);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(70, 23);
             this.button2.TabIndex = 12;
             this.button2.Text = "Додати";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button3.BackColor = System.Drawing.Color.Teal;
             this.button3.Location = new System.Drawing.Point(591, 405);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 33);
             this.button3.TabIndex = 14;
             this.button3.Text = "Видалити";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label10
@@ -218,12 +222,13 @@
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.Teal;
             this.button4.Location = new System.Drawing.Point(114, 51);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(70, 23);
             this.button4.TabIndex = 16;
             this.button4.Text = "Відміна";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label11
@@ -238,16 +243,18 @@
             // 
             // button6
             // 
+            this.button6.BackColor = System.Drawing.Color.Teal;
             this.button6.Location = new System.Drawing.Point(190, 134);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(70, 23);
             this.button6.TabIndex = 19;
             this.button6.Text = "Видалити";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.Color.DarkCyan;
             this.textBox2.Location = new System.Drawing.Point(24, 134);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(84, 20);
@@ -256,7 +263,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label11);
@@ -273,6 +280,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button3);
@@ -287,6 +295,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "Philatelists_Info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
