@@ -52,7 +52,6 @@ namespace Довідник_філателіста
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Thread th;
             th = new Thread(openNewForm);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
@@ -128,12 +127,12 @@ namespace Довідник_філателіста
                 OpenDialogForm();
             }
         }
+
         private void OpenDialogForm()
         {
             using (Philatelists_Info dialogForm = new Philatelists_Info())
             {
                 dialogForm.FormClosing += DialogForm_FormClosing;
-
                 dialogForm.ShowDialog(this);
             }
         }

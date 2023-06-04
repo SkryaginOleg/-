@@ -260,7 +260,7 @@ namespace Довідник_філателіста
             // 
             // textBox3
             // 
-            this.textBox3.BackColor = System.Drawing.Color.DarkCyan;
+            this.textBox3.BackColor = System.Drawing.SystemColors.Window;
             this.textBox3.Location = new System.Drawing.Point(120, 49);
             this.textBox3.Name = "textBox3";
             this.textBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -270,7 +270,7 @@ namespace Довідник_філателіста
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.Color.DarkCyan;
+            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
             this.textBox2.Location = new System.Drawing.Point(9, 49);
             this.textBox2.Name = "textBox2";
             this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;

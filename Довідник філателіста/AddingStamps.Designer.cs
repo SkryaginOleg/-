@@ -51,7 +51,7 @@
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.BackColor = System.Drawing.Color.DarkCyan;
+            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
             this.textBox1.Location = new System.Drawing.Point(92, 73);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(225, 20);
@@ -60,7 +60,7 @@
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.BackColor = System.Drawing.Color.DarkCyan;
+            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
             this.textBox2.Location = new System.Drawing.Point(92, 132);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(225, 20);
@@ -69,7 +69,7 @@
             // textBox3
             // 
             this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.BackColor = System.Drawing.Color.DarkCyan;
+            this.textBox3.BackColor = System.Drawing.SystemColors.Window;
             this.textBox3.Location = new System.Drawing.Point(92, 198);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(225, 20);
@@ -78,7 +78,7 @@
             // textBox4
             // 
             this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.BackColor = System.Drawing.Color.DarkCyan;
+            this.textBox4.BackColor = System.Drawing.SystemColors.Window;
             this.textBox4.Location = new System.Drawing.Point(92, 262);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(225, 20);
@@ -87,7 +87,7 @@
             // textBox5
             // 
             this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox5.BackColor = System.Drawing.Color.DarkCyan;
+            this.textBox5.BackColor = System.Drawing.SystemColors.Window;
             this.textBox5.Location = new System.Drawing.Point(92, 321);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(225, 20);

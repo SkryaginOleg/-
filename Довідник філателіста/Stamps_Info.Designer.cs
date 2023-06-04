@@ -109,6 +109,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(337, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 16);
@@ -120,6 +121,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(228, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 16);
@@ -131,6 +133,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(85, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 16);
@@ -142,6 +145,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(35, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 16);
@@ -165,6 +169,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label10.Location = new System.Drawing.Point(464, 34);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 16);
@@ -188,6 +193,7 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label12.Location = new System.Drawing.Point(589, 34);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 16);
@@ -198,6 +204,7 @@
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button3.BackColor = System.Drawing.Color.Teal;
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button3.Location = new System.Drawing.Point(592, 405);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 33);
@@ -210,6 +217,7 @@
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(697, 405);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 33);
@@ -239,7 +247,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "Stamps_Info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

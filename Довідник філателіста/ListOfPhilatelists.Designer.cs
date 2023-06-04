@@ -45,8 +45,10 @@
             // dataGridView1
             // 
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Teal;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.Color.Teal;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -65,7 +67,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.DarkCyan;
+            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
             this.textBox1.Location = new System.Drawing.Point(17, 81);
             this.textBox1.Name = "textBox1";
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -101,7 +103,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.Color.DarkCyan;
+            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
             this.textBox2.Location = new System.Drawing.Point(17, 167);
             this.textBox2.Name = "textBox2";
             this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -111,7 +113,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.BackColor = System.Drawing.Color.DarkCyan;
+            this.textBox3.BackColor = System.Drawing.SystemColors.Window;
             this.textBox3.Location = new System.Drawing.Point(17, 246);
             this.textBox3.Name = "textBox3";
             this.textBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;

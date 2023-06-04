@@ -26,7 +26,7 @@ namespace Довідник_філателіста
 
             table.Columns.Add("ID", typeof(int));
             table.Columns.Add("Страна", typeof(string));
-            table.Columns.Add("Рік", typeof(string));
+            table.Columns.Add("Рік", typeof(int));
             table.Columns.Add("Тираж", typeof(int));
             table.Columns.Add("Вартість", typeof(double));
             table.Columns.Add("Назва", typeof(string));
@@ -65,10 +65,6 @@ namespace Довідник_філателіста
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        private void openNewForm()
-        {
-            Application.Run(new ListOfPhilatelists());
         }
 
         private void buttonClose_Click(object sender, EventArgs e)

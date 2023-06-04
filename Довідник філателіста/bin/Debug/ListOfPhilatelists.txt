@@ -1,4 +1,4 @@
-6/|1/|3/|11/|12/|13/|14/|16/|17/|23/|34/|56/|45/|67
+6/|1/|3/|12/|13/|14/|16/|17/|23/|34/|56/|45/|67
 1/[]Іван Петров/[]Україна/[]ivan@example.com
 1/|2/|3/|6/|10
 2/[]Emily Johnson/[]США/[]emily@example.com
@@ -125,8 +125,6 @@
 
 67/[]Juan Garcia/[]Іспанія/[]juan.garcia@example.com
 
-68/[]Ivan Petrov/[]Росія/[]ivan.petrov2@example.com
-
 69/[]Sophie Taylor/[]Велика Британія/[]sophie.taylor@example.com
 
 70/[]Ahmed Salah/[]Єгипет/[]ahmed.salah@example.com
@@ -172,7 +170,7 @@
 90/[]Alexander Petrov/[]Росія/[]alexander.petrov@example.com
 
 91/[]Emma Johnson/[]США/[]emma.johnson@example.com
-
+2
 92/[]Ahmed Ali/[]Єгипет/[]ahmed.ali@example.com
 
 93/[]Marta Bianchi/[]Італія/[]marta.bianchi@example.com
