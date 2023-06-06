@@ -47,22 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddingStamps.cs">
+    <Compile Include="Forms\AddingStamps.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddingStamps.Designer.cs">
+    <Compile Include="Forms\AddingStamps.Designer.cs">
       <DependentUpon>AddingStamps.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddingPhilatelists.cs">
+    <Compile Include="Forms\AddingPhilatelists.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddingPhilatelists.Designer.cs">
+    <Compile Include="Forms\AddingPhilatelists.Designer.cs">
       <DependentUpon>AddingPhilatelists.cs</DependentUpon>
     </Compile>
-    <Compile Include="OwnCollection.cs">
+    <Compile Include="Forms\OwnCollection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OwnCollection.Designer.cs">
+    <Compile Include="Forms\OwnCollection.Designer.cs">
       <DependentUpon>OwnCollection.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -70,60 +70,60 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Stamps_Info.cs">
+    <Compile Include="Forms\Stamps_Info.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stamps_Info.Designer.cs">
+    <Compile Include="Forms\Stamps_Info.Designer.cs">
       <DependentUpon>Stamps_Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="Philatelists_Info.cs">
+    <Compile Include="Forms\Philatelists_Info.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Philatelists_Info.Designer.cs">
+    <Compile Include="Forms\Philatelists_Info.Designer.cs">
       <DependentUpon>Philatelists_Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListOfPhilatelists.cs">
+    <Compile Include="Forms\ListOfPhilatelists.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListOfPhilatelists.Designer.cs">
+    <Compile Include="Forms\ListOfPhilatelists.Designer.cs">
       <DependentUpon>ListOfPhilatelists.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListOfStamps.cs">
+    <Compile Include="Forms\ListOfStamps.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListOfStamps.Designer.cs">
+    <Compile Include="Forms\ListOfStamps.Designer.cs">
       <DependentUpon>ListOfStamps.cs</DependentUpon>
     </Compile>
-    <Compile Include="Metod.cs" />
-    <Compile Include="Stamp.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="Classes\Check.cs" />
+    <Compile Include="Classes\Stamp.cs" />
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Philatelist.cs" />
-    <Compile Include="Programs.cs" />
+    <Compile Include="Classes\Philatelist.cs" />
+    <Compile Include="Classes\Programs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddingPhilatelists.resx">
+    <EmbeddedResource Include="Forms\AddingPhilatelists.resx">
       <DependentUpon>AddingPhilatelists.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListOfPhilatelists.resx">
+    <EmbeddedResource Include="Forms\ListOfPhilatelists.resx">
       <DependentUpon>ListOfPhilatelists.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListOfStamps.resx">
+    <EmbeddedResource Include="Forms\ListOfStamps.resx">
       <DependentUpon>ListOfStamps.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddingStamps.resx">
+    <EmbeddedResource Include="Forms\AddingStamps.resx">
       <DependentUpon>AddingStamps.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OwnCollection.resx">
+    <EmbeddedResource Include="Forms\OwnCollection.resx">
       <DependentUpon>OwnCollection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Philatelists_Info.resx">
+    <EmbeddedResource Include="Forms\Philatelists_Info.resx">
       <DependentUpon>Philatelists_Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -131,7 +131,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stamps_Info.resx">
+    <EmbeddedResource Include="Forms\Stamps_Info.resx">
       <DependentUpon>Stamps_Info.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
