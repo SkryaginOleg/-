@@ -1,0 +1,345 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Threading;
+using System.Windows.Forms;
+
+
+namespace Довідник_філателіста
+{
+    public partial class ListOfStamps : Form
+    {
+        public ListOfStamps()
+        {
+            InitializeComponent();
+        }
+        Thread th;
+        DataTable table = new DataTable();
+
+        //Виводить до таблиці марки, дані яких влаштовують критеріям пошуку
+        private void Print(List<Stamp> list)
+        {
+            foreach (Stamp stamp in list)
+            {
+                table.Rows.Add(stamp.id, stamp.country, stamp.year, 
+                    stamp.circulation, stamp.cost, stamp.features);
+            }           
+        }
+
+        //Перевіряємо марку на відповідність до фільтрів
+        private bool List(Stamp stamp)
+        {
+            return Country(stamp) && Cost(stamp) && Year(stamp) && Circulation(stamp);
+        }
+
+        private bool Country(Stamp stamp)
+        {
+            return stamp.country.ToLower().IndexOf(textBox1.Text.ToLower(), 
+                StringComparison.OrdinalIgnoreCase) >= 0;
+        }
+
+        private bool Cost(Stamp stamp)
+        {
+            bool MinCost = stamp.cost >= trackBar2.Value;
+            bool MaxCost = stamp.cost <= ListStamp.MaxCost - trackBar1.Value;
+            return MinCost && MaxCost;
+        }
+
+        private bool Year(Stamp stamp)
+        {
+            bool MinYear = stamp.year >= trackBar4.Value;
+            bool MaxYear = stamp.year <= ListStamp.MaxYear - trackBar3.Value;
+            return MinYear && MaxYear;
+        }
+
+        private bool Circulation(Stamp stamp)
+        {
+            bool MinCirculation = stamp.circulation >= Convert.ToInt32(textBox2.Text);
+            bool MaxCirculation = stamp.circulation <= Convert.ToInt32(textBox3.Text);
+            return MinCirculation && MaxCirculation && Check.Check_int(textBox2.Text) 
+                && Check.Check_int(textBox3.Text);
+        }
+        //Оновлюємо таблицю
+        private void update()
+        {
+            table.Rows.Clear();
+            foreach (Stamp stamp in ListStamp.Stamps)
+            {
+                if (List(stamp))
+                {
+                    table.Rows.Add(stamp.id, stamp.country, stamp.year, 
+                        stamp.circulation, stamp.cost, stamp.features);
+                }
+            }
+        }
+
+        private void ListOfStamps_Load(object sender, EventArgs e)
+        {
+            //Створюємо таблицю
+            Text = "Список марок";
+            dataGridView1.DataSource = null;
+            table.Rows.Clear();
+            table.Columns.Clear();
+
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Страна", typeof(string));
+            table.Columns.Add("Рік", typeof(string));
+            table.Columns.Add("Тираж", typeof(int));
+            table.Columns.Add("Вартість", typeof(double));
+            table.Columns.Add("Назва", typeof(string));
+
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView1.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
+
+            dataGridView1.DataSource = table;
+            dataGridView1.Refresh();
+
+            Print(ListStamp.Stamps);
+            label3.Text = Convert.ToString(ListStamp.MaxCost);
+            label4.Text = Convert.ToString(ListStamp.MinCost);
+            label8.Text = Convert.ToString(ListStamp.MaxYear);
+            label9.Text = Convert.ToString(ListStamp.MinYear);
+            textBox2.Text = "0";
+            textBox3.Text = $"{ListStamp.MaxCirculation}";
+            label13.Text = Convert.ToString(ListStamp.Length);
+            label14.Text = Convert.ToString(ListStamp.Length);
+            label17.Text = Convert.ToString(ListStamp.Length);
+            label18.Text = Convert.ToString(ListStamp.Length);
+        }
+
+        //При взаємодією з полем вводу виводимо в таблицю новий список марок,
+        //який відповідає обраним критеріям
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = textBox1.Text.ToLower();
+            table.Rows.Clear();
+            int count = 0;
+            foreach (Stamp stamp in ListStamp.Stamps)
+            {
+                if (List(stamp))
+                {
+                    count++;
+                    table.Rows.Add(stamp.id, stamp.country, stamp.year, 
+                        stamp.circulation, stamp.cost, stamp.features);
+                }
+            }
+            label18.Text = Convert.ToString(count++);
+        }
+
+        //Встановлює максимальне та мінімальне значення для ціни
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            trackBar1.Minimum = 0;
+            trackBar1.Maximum = Convert.ToInt32(ListStamp.MaxCost 
+                - ListStamp.MinCost);
+            trackBar1.SmallChange = 10;
+            label3.Text = Convert.ToString(ListStamp.MaxCost 
+                - trackBar1.Value);
+            int count = 0;
+            int count1 = 0;
+            foreach (Stamp stamp in ListStamp.Stamps)
+            {
+                if (Cost(stamp))
+                {
+                    count++;
+                }
+                if (List(stamp))
+                {
+                    count1++;
+                }
+            }
+            label13.Text = Convert.ToString(count);
+            label18.Text = Convert.ToString(count1);
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            trackBar2.Minimum = Convert.ToInt32(ListStamp.MinCost);
+            trackBar2.Maximum = Convert.ToInt32(ListStamp.MaxCost);
+            trackBar2.SmallChange = 10;
+            label4.Text = Convert.ToString(trackBar2.Value);
+            int count = 0;
+            int count1 = 0;
+            foreach (Stamp stamp in ListStamp.Stamps)
+            {
+                if (Cost(stamp))
+                {
+                    count++;
+                }
+                if (List(stamp))
+                {
+                    count1++;
+                }
+            }
+            label13.Text = Convert.ToString(count);
+            label18.Text = Convert.ToString(count1);
+        }
+
+        //Встановлює максимальне та мінімальне значення для тиражу
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            trackBar3.Minimum = 0;
+            trackBar3.Maximum = Convert.ToInt32(ListStamp.MaxYear 
+                - ListStamp.MinYear);
+            trackBar3.SmallChange = 10;
+            label8.Text = Convert.ToString(ListStamp.MaxYear 
+                - trackBar3.Value);
+            int count = 0;
+            int count1 = 0;
+            foreach (Stamp stamp in ListStamp.Stamps)
+            {
+                if (Year(stamp))
+                {
+                    count++;
+                }
+                if (List(stamp))
+                {
+                    count1++;
+                }
+            }
+            label14.Text = Convert.ToString(count);
+            label18.Text = Convert.ToString(count1);
+        }
+
+        private void trackBar4_Scroll(object sender, EventArgs e)
+        {
+            trackBar4.Minimum = Convert.ToInt32(ListStamp.MinYear);
+            trackBar4.Maximum = Convert.ToInt32(ListStamp.MaxYear);
+            trackBar4.SmallChange = 10;
+            label9.Text = Convert.ToString(trackBar4.Value);
+            int count = 0;
+            int count1 = 0;
+            foreach (Stamp stamp in ListStamp.Stamps)
+            {
+                if (Year(stamp))
+                {
+                    count++;
+                }
+                if (List(stamp))
+                {
+                    count1++;
+                }
+            }
+            label14.Text = Convert.ToString(count);
+            label18.Text = Convert.ToString(count1);
+        }
+
+        //Перевіряє на правільність вводу, якщо дані не коректні,
+        //то повертає початкові
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            if (!Check.Check_int(textBox2.Text))
+            {
+                textBox2.Text = "0";
+            }
+            int count = 0;
+            int count1 = 0;
+            foreach (Stamp stamp in ListStamp.Stamps)
+            {
+                if (Circulation(stamp))
+                {
+                    count++;
+                }
+                if (List(stamp))
+                {
+                    count1++;
+                }
+            }
+            label17.Text = Convert.ToString(count);
+            label18.Text = Convert.ToString(count1);
+        }
+
+        //Перевіряє на правільність вводу, якщо дані не коректні,
+        //то повертає початкові
+        private void textBox3_Leave(object sender, EventArgs e)
+        {
+            if (!Check.Check_int(textBox3.Text))
+            {
+                textBox3.Text = $"{ListStamp.MaxCirculation}";
+            }
+            int count = 0;
+            int count1 = 0;
+            foreach (Stamp stamp in ListStamp.Stamps)
+            {
+                if (List(stamp))
+                {
+                    count++;
+                }
+                if (List(stamp))
+                {
+                    count1++;
+                }
+            }
+            label17.Text = Convert.ToString(count);
+            label18.Text = Convert.ToString(count1);
+        }
+
+        //Оновлює таблицю
+        private void button2_Click(object sender, EventArgs e)
+        {
+            update();
+        }
+
+        //Откриває попередню форму
+        private void button1_Click(object sender, EventArgs e)
+        {
+            th = new Thread(openNewForm);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+            this.Close();
+        }
+        private void openNewForm()
+        {
+            Application.Run(new MainForm());
+        }
+
+        //Відкриваємо нову форму з інформацією про вибрану марку
+        private void dataGridView1_CellDoubleClick(object sender, 
+            DataGridViewCellEventArgs e)
+        {
+            // Перевіряємо, що комірка не є заголовком
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0) 
+            {
+                //Отримуємо обраний елемент
+                var selectedRow = dataGridView1.Rows[e.RowIndex];
+                ListStamp.actual_id = Convert.ToInt32
+                    (selectedRow.Cells["ID"].Value.ToString());
+                OpenDialogForm();
+            }
+        }
+
+        //Откриваємо форму з інформацією про марку
+        private void OpenDialogForm()
+        {
+            using (Stamps_Info dialogForm = new Stamps_Info())
+            {
+                dialogForm.FormClosing += DialogForm_FormClosing;
+
+                dialogForm.ShowDialog(this);
+            }
+        }
+
+        private void DialogForm_FormClosing(object sender, 
+            FormClosingEventArgs e)
+        {
+            update();
+        }
+
+        //Відкриваємо форму для додавання нової марки
+        private void button4_Click(object sender, EventArgs e)
+        {
+            th = new Thread(openNewForm1);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+            this.Close();
+        }
+        private void openNewForm1()
+        {
+            Application.Run(new AddingStamps());
+        }
+    }
+}

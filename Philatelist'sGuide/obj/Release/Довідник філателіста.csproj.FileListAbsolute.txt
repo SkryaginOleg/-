@@ -1,0 +1,12 @@
+E:\ХНУРЕ\OOP\Довідник філателіста\bin\Release\Довідник філателіста.exe.config
+E:\ХНУРЕ\OOP\Довідник філателіста\bin\Release\Довідник філателіста.exe
+E:\ХНУРЕ\OOP\Довідник філателіста\bin\Release\Довідник філателіста.pdb
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Release\Довідник філателіста.csproj.AssemblyReference.cache
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Release\Довідник філателіста.csproj.SuggestedBindingRedirects.cache
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Release\Довідник_філателіста.AddingForm.resources
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Release\Довідник_філателіста.MainForm.resources
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Release\Довідник_філателіста.Properties.Resources.resources
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Release\Довідник філателіста.csproj.GenerateResource.cache
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Release\Довідник філателіста.csproj.CoreCompileInputs.cache
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Release\Довідник філателіста.exe
+E:\ХНУРЕ\OOP\Довідник філателіста\obj\Release\Довідник філателіста.pdb
